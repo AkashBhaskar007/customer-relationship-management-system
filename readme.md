@@ -2,10 +2,10 @@
 
 Backend application for a customer relationship management(CRM) system using NodeJS, ExpressJS and PostgreSQL
 
-## steps to run the application
-- # Install packages
+## Steps to run the application
+- ### Install packages
  $ npm install
-- ## Running migrations
+- ### Running migrations
  $ npx sequelize-cli db:migrate
 - ### Starting application
  $ npm start
