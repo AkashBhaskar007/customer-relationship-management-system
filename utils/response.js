@@ -1,7 +1,6 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 const { httpStatusCodes, messages } = require('../app-config');
-const loggerUtil = require('./logger');
 
 const success = (res, message, data = null) => {
     const response = {
@@ -13,8 +12,6 @@ const success = (res, message, data = null) => {
     res.status(httpStatusCodes.OK).send(response);
 };
 const serverError = (res, error, message) => {
-    loggerUtil.error({ message: error.toString(), level: 'error' });
-
     res.status(httpStatusCodes.INTERNAL_SERVER_ERROR).send({
         status: false,
         error: error.toString(),

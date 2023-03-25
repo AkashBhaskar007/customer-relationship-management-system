@@ -1,6 +1,4 @@
 /* eslint-disable no-console */
-require('module-alias/register');
-
 const express = require('express');
 require('dotenv').config();
 
@@ -16,6 +14,6 @@ app.listen(process.env.PORT, (err) => {
     if (err) {
         console.log('Error', err);
     }
-    console.log('Node.js is running at port: ', process.env.PORT);
+    console.log('Application is running on port:', process.env.PORT);
 });
 module.exports = app;
