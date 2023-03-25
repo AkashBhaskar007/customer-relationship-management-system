@@ -4,11 +4,11 @@ Backend application for a customer relationship management(CRM) system using Nod
 
 ## Steps to run the application
 - ### Install packages
- $ npm install
+      $ npm install
 - ### Running migrations
- $ npx sequelize-cli db:migrate
+      $ npx sequelize-cli db:migrate
 - ### Starting application
- $ npm start
+      $ npm start
  
 
 ### Node version 
