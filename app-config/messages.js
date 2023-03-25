@@ -10,7 +10,7 @@ const messages = {
         emailExists: 'User with this email already exists',
         noUser: 'No employee found, please register',
         incorrectPassword: 'Incorrect password',
-        noEnquiry: 'No enquiry with this ID',
+        noEnquiryClaimed: 'No enquiry claimed',
     },
 };
 module.exports = messages;

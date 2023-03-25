@@ -1,21 +1,22 @@
 const { response } = require('app-utils');
+const jwt = require('jsonwebtoken');
 const { messages } = require('../../app-config');
 const { Form } = require('../../models');
 
 const getEnquiries = async (req, res) => {
     try {
-        console.log(req.user.id);
+        const token = req.headers.authorization.split(' ')[1];
+        const decoded = await jwt.verify(token, process.env.SECRET);
         const { formId } = req.params;
         const enquiry = await Form.findOne({
             where: {
                 id: formId,
             },
         });
-        console.log(enquiry);
         if (!enquiry) return response.success(res, messages.badRequest.noEnquiry);
 
         await Form.update({
-            claimedBy: req.user.id,
+            claimedBy: decoded.id,
             isClaimed: true,
         }, {
             where: {
