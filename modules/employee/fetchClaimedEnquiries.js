@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { response } = require('../../utils/response');
+const { response } = require('../../utils');
 const { messages } = require('../../app-config');
 const { Form } = require('../../models');
 
@@ -11,6 +11,7 @@ const fetchClaimedEnquiries = async (req, res) => {
             where: {
                 claimedBy: decoded.id,
             },
+            attributes: ['clientName', 'clientEmail', 'courseInterest'],
         });
         if (enquiry.length === 0) return response.success(res, messages.badRequest.noEnquiryClaimed);
         return response.success(res, messages.success.claimed, enquiry);
