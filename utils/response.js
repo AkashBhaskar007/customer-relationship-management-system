@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
-const { httpStatusCodes } = require('../app-config');
+const { httpStatusCodes, messages } = require('../app-config');
 const loggerUtil = require('./logger');
 
 const success = (res, message, data = null) => {
@@ -27,8 +27,15 @@ const badRequestError = (res, message) => {
         message,
     });
 };
+const authorizationError = (res, message) => {
+    res.status(httpStatusCodes.UNAUTHORIZED).send({
+        status: false,
+        message: message || messages.auth.unauthorized
+    })
+}
 module.exports = {
     success,
     serverError,
     badRequestError,
+    authorizationError
 };

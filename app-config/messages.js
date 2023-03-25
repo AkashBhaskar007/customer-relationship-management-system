@@ -12,5 +12,8 @@ const messages = {
         incorrectPassword: 'Incorrect password',
         noEnquiryClaimed: 'No enquiry claimed',
     },
+    auth: {
+        unauthorized: 'Please login to continue',
+    },
 };
 module.exports = messages;
