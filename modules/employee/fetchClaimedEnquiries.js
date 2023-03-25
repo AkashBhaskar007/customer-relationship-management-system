@@ -8,7 +8,7 @@ const fetchClaimedEnquiries = async (req, res) => {
             where: {
                 claimedBy: req.user.id,
             },
-            attributes: ['clientName', 'clientEmail', 'courseInterest'],
+            attributes: ['id', 'clientName', 'clientEmail', 'courseInterest'],
         });
         if (enquiry.length === 0) return response.success(res, messages.badRequest.noEnquiryClaimed);
         return response.success(res, messages.success.claimed, enquiry);

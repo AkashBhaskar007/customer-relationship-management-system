@@ -8,7 +8,7 @@ const claimEnquiry = async (req, res) => {
             where: {
                 isClaimed: false,
             },
-            attributes: ['clientName', 'clientEmail', 'courseInterest'],
+            attributes: ['id', 'clientName', 'clientEmail', 'courseInterest'],
         });
         if (enquiries.count === 0) return response.success(res, messages.success.noEnquiry);
         return response.success(res, messages.success.listFetched, enquiries);
