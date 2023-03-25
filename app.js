@@ -1,10 +1,10 @@
+/* eslint-disable no-console */
 require('module-alias/register');
 
 const express = require('express');
 require('dotenv').config();
 
 const app = express();
-// const logger = require('morgan');
 
 const routes = require('./routes');
 

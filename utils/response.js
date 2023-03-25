@@ -30,12 +30,12 @@ const badRequestError = (res, message) => {
 const authorizationError = (res, message) => {
     res.status(httpStatusCodes.UNAUTHORIZED).send({
         status: false,
-        message: message || messages.auth.unauthorized
-    })
-}
+        message: message || messages.auth.unauthorized,
+    });
+};
 module.exports = {
     success,
     serverError,
     badRequestError,
-    authorizationError
+    authorizationError,
 };

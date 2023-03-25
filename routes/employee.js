@@ -1,6 +1,8 @@
 const express = require('express');
 const { authenticate } = require('../middlewares/auth');
-const { employeeRegister, getEnquiries, employeeLogin, claimEnquiry, fetchClaimedEnquiries } = require('../modules/employee');
+const {
+    employeeRegister, getEnquiries, employeeLogin, claimEnquiry, fetchClaimedEnquiries,
+} = require('../modules/employee');
 
 const employeeRouter = express.Router();
 
