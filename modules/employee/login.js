@@ -14,14 +14,12 @@ const employeeLogin = async (req, res) => {
         });
         if (!user) return response.badRequestError(res, messages.badRequest.noUser);
         const passwordCheck = await bcrypt.compare(password, user.password);
-        console.log(passwordCheck);
         if (passwordCheck) {
             const token = jwt.sign({
                 id: user.id,
                 name: user.name,
                 email: user.email,
             }, process.env.SECRET);
-            console.log(token);
             return response.success(res, messages.success.login, { token });
         }
         return response.success(res, messages.badRequest.incorrectPassword);
